@@ -1,0 +1,202 @@
+:root {
+  font-size: 62.5%;
+}
+:root body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$colors: (
+  primary: #fff,
+  secondary: #000,
+  button1: #fac564
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$tablet: 700px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+$desktop: 1024px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+body,
+span,
+h1,
+h2,
+p {
+  font-family: "Lato", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: color(primary);
+
+  .hero {
+    height: 100%;
+    background-image: url("/images/hero2.jpg");
+    opacity: 0.8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      .logo {
+        font-size: 4rem;
+        margin: 1rem;
+
+        @include tablet {
+          font-size: 6rem;
+          margin: 2rem;
+        }
+
+        @include desktop() {
+          font-size: 7rem;
+          margin: 3rem;
+        }
+      }
+
+      .menu-btn,
+      .order-btn {
+        text-decoration: none;
+        font-size: 2rem;
+        text-align: center;
+        padding: 0.5rem;
+        width: 50%;
+        margin: 0.5rem;
+        border-radius: 5px;
+
+        @include tablet {
+          width: 35%;
+          margin: 0.75rem;
+        }
+
+        @include desktop() {
+          width: 30%;
+          margin: 1rem;
+        }
+      }
+      .menu-btn {
+        background: color(button1);
+        border: 1px solid color(button1);
+        color: color(secondary);
+      }
+      .order-btn {
+        border: 1px solid color(primary);
+        color: color(primary);
+      }
+    }
+  }
+}
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+
+  .container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #f2f2f2;
+
+    .wrap-login {
+      width: 390px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 77px 55px 33px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.login-form {
+  width: 100%;
+
+  .login-form-title {
+    display: block;
+    font-size: 30px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .input {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: 0 0;
+    padding: 0 5px;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 37px;
+  }
+
+  .login-form-btn {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+  }
+
+  .txt1 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .txt2 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+  }
+}
+
+input {
+  outline: none;
+  border: none;
+}
