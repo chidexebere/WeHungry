@@ -15,7 +15,9 @@
 $colors: (
   primary: #fff,
   secondary: #000,
-  button1: #fac564
+  button1: #fac564,
+  link: brown,
+  link-light: lighten(brown, 40%)
 );
 
 @function color($color-name) {
@@ -57,7 +59,7 @@ body {
 
   .hero {
     height: 100%;
-    background-image: url("/images/hero2.jpg");
+    background-image: url("../../UI/images/hero2.jpg");
     opacity: 0.8;
     background-position: center;
     background-repeat: no-repeat;
@@ -118,7 +120,7 @@ body {
   }
 }
 
-.limiter {
+.cover-login {
   width: 100%;
   margin: 0 auto;
 
@@ -129,16 +131,30 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background: #f2f2f2;
+    padding: 1rem;
+    background-image: url("../../UI/images/bg_1.jpg");
+    opacity: 0.8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .wrap-login {
-      width: 390px;
-      background: #fff;
+      width: 90%;
+      background: color(primary);
       border-radius: 10px;
       overflow: hidden;
-      padding: 77px 55px 33px;
+      padding: 0 2rem 7rem;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+      @include tablet {
+        width: 70%;
+        padding: 0 5rem 7rem;
+      }
+
+      @include desktop() {
+        width: 50%;
+        padding: 0 7rem 7rem;
+      }
     }
   }
 }
@@ -147,52 +163,63 @@ body {
   width: 100%;
 
   .login-form-title {
-    display: block;
-    font-size: 30px;
-    color: #333;
-    line-height: 1.2;
+    font-size: 4rem;
+    margin: 1rem;
+    color: #000;
     text-align: center;
+    padding: 3rem 1rem 5rem;
+
+    @include tablet {
+      font-size: 5rem;
+      margin: 2rem;
+    }
+
+    @include desktop() {
+      font-size: 6rem;
+      margin: 0 0 0 3rem;
+    }
   }
 
   .input {
-    font-size: 15px;
-    color: #555;
+    color: color(secondary);
     line-height: 1.2;
     display: block;
     width: 100%;
     height: 45px;
     background: 0 0;
     padding: 0 5px;
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid color(link-light);
     margin-bottom: 37px;
   }
 
   .login-form-btn {
-    font-family: Poppins-Medium;
-    font-size: 15px;
-    color: #fff;
+    font-size: 2rem;
     line-height: 1.2;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
     width: 100%;
     height: 50px;
+    background-color: color(button1);
+    border: 1px solid color(button1);
+    border-radius: 5px;
   }
 
-  .txt1 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
-    color: #666;
-    line-height: 1.5;
-  }
+  .text-signup {
+    text-align: center;
+    padding-top: 10rem;
 
-  .txt2 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
-    color: #333;
-    line-height: 1.5;
+    .txt1,
+    .txt2 {
+      color: color(secondary);
+      line-height: 1.5;
+    }
+
+    .txt2 {
+      text-decoration: none;
+      color: color(link);
+    }
   }
 }
 
