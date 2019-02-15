@@ -15,10 +15,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class="hero">
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="#!"><h1>WeHungry</h1></a>
+        </div>
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="#!">About</a>
+            </li>
+            <li>
+              <a href="#!">Need Help?</a>
+            </li>
+            <li>
+              <a href="#!">Be our Caterer </a>
+            </li>
+            <li>
+              <a href="#!">Login/Signup</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section class="hero">
       <div class="wrapper">
         <div class="logo">
           <h1>WeHungry</h1>
@@ -26,6 +55,9 @@
         <a href="food-selection.html" class="menu-btn">Today's Menu</a>
         <a href="login.html" class="order-btn">Order Now</a>
       </div>
-    </div>
+    </section>
+
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
