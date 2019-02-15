@@ -18,8 +18,14 @@ body,
 span,
 h1,
 h2,
+h3,
 p {
   font-family: "Lato", sans-serif;
+}
+
+input {
+  outline: none;
+  border: none;
 }
 
 body,
@@ -241,8 +247,156 @@ body .hero .wrapper .order-btn {
   color: brown;
 }
 
-input {
-  outline: none;
-  border: none;
+.menu-cover {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu-cover .menu-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../../UI/images/bg_1.jpg");
+  opacity: 0.8;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.menu-cover .menu-container .menu-title {
+  font-size: 3rem;
+  margin: 1rem;
+  text-align: left;
+  padding: 3rem 1rem 5rem;
+}
+
+@media (min-width: 700px) {
+  .menu-cover .menu-container .menu-title {
+    font-size: 4rem;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-cover .menu-container .menu-title {
+    font-size: 5rem;
+    margin: 0 0 0 3rem;
+  }
+}
+
+.menu-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+@media (min-width: 700px) {
+  .menu-wrap {
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-wrap {
+    margin: 0 3rem 0 4rem;
+  }
+}
+
+.menu-wrap .meal {
+  width: 100%;
+  height: 35rem;
+  margin: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media (min-width: 700px) {
+  .menu-wrap .meal {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-wrap .meal {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+.menu-wrap .meal .meal-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+}
+
+.menu-wrap .meal .meal-wrap .meal-header {
+  font-size: 2.5rem;
+  padding: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #000;
+}
+
+.menu-wrap .meal .meal-wrap .meal-image {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  width: 100%;
+  height: 20rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-wrap .meal .meal-wrap .meal-footer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.meal-1 .meal-image {
+  background-image: url("../../UI/images/food_1.jpg");
+}
+
+.meal-2 .meal-image {
+  background-image: url("../../UI/images/food_2.jpg");
+}
+
+.meal-3 .meal-image {
+  background-image: url("../../UI/images/food_3.jpg");
+}
+
+.meal-4 .meal-image {
+  background-image: url("../../UI/images/food_4.jpg");
+}
+
+.meal-5 .meal-image {
+  background-image: url("../../UI/images/food_5.jpg");
+}
+
+.meal-6 .meal-image {
+  background-image: url("../../UI/images/food_6.jpg");
 }
 /*# sourceMappingURL=main.css.map */
