@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 // routes
-//import mealRoutes from "./routes/meal.route";
+import mealRoutes from "./routes/meal.route";
 
 const app = express();
 const PORT = 7001;
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 // handle
-//app.use("/api/v1/meals", mealRoutes);
+app.use("/api/v1/meals", mealRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
