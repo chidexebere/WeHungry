@@ -31,7 +31,7 @@ const MealService = {
     updatedMeal.name = mealUpdate.name;
     updatedMeal.price = mealUpdate.price;
     updatedMeal.size = mealUpdate.size;
-    return meals;
+    return updatedMeal;
   },
   deleteAMeal(id) {
     const i = dummyData.meals.findIndex(meal => meal.id == id);
