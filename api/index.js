@@ -1,5 +1,5 @@
 import express from "express";
-//import bodyParser from "body-parser";
+import bodyParser from "body-parser";
 
 // routes
 //import mealRoutes from "./routes/meal.route";
@@ -7,7 +7,7 @@ import express from "express";
 const app = express();
 const PORT = 7001;
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   return res.send("The API is working");
