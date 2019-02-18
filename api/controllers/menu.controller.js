@@ -29,7 +29,7 @@ const MenuController = {
       })
       .status(201);
   },
-  fetchAllMeals(req, res) {
+  fetchTodaysMenu(req, res) {
     const todaysMenu = MenuService.fetchTodaysMenu();
     return res
       .json({
