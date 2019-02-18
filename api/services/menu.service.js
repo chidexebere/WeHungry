@@ -3,10 +3,6 @@ import Menu from "../models/menu.model";
 
 const MenuService = {
   createMenu(menu) {
-    const menuLength = menuData.menu.length;
-    const lastId = menuData.menu[menuLength - 1].id;
-    const newId = lastId + 1;
-    menu.id = newId;
     menuData.menu.push(menu);
     return menu;
   },
