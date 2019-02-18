@@ -265,7 +265,7 @@ body .hero .wrapper .order-btn {
   font-size: 3rem;
   margin: 1rem;
   text-align: left;
-  padding: 3rem 1rem 5rem;
+  padding: 7rem 1rem 5rem;
 }
 
 @media (min-width: 700px) {
@@ -277,7 +277,7 @@ body .hero .wrapper .order-btn {
 
 @media (min-width: 1024px) {
   .menu-cover .menu-container .menu-title {
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 0 0 0 3rem;
   }
 }

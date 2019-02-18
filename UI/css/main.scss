@@ -245,7 +245,7 @@ body {
       font-size: 3rem;
       margin: 1rem;
       text-align: left;
-      padding: 3rem 1rem 5rem;
+      padding: 7rem 1rem 5rem;
 
       @include tablet {
         font-size: 4rem;
@@ -253,7 +253,7 @@ body {
       }
 
       @include desktop() {
-        font-size: 5rem;
+        font-size: 4rem;
         margin: 0 0 0 3rem;
       }
     }
