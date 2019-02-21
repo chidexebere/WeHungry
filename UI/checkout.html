@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css?family=Lato"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -22,7 +26,7 @@
     <section class="navigation">
       <div class="nav-container">
         <div class="brand">
-          <a href="#!"><h1>WeHungry</h1></a>
+          <a href="index.html"><h1>WeHungry</h1></a>
         </div>
         <nav>
           <div class="nav-mobile">
@@ -46,150 +50,101 @@
       </div>
     </section>
 
-    <section>
-      <div class="row">
-        <div class="col-75">
-          <div class="container">
-            <form action="/action_page.php">
-              <div class="row">
-                <div class="col-50">
-                  <h3>Billing Address</h3>
-                  <label for="fname"
-                    ><i class="fa fa-user"></i> Full Name</label
-                  >
-                  <input
-                    type="text"
-                    id="fname"
-                    name="firstname"
-                    placeholder="John M. Doe"
-                  />
-                  <label for="email"
-                    ><i class="fa fa-envelope"></i> Email</label
-                  >
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder="john@example.com"
-                  />
-                  <label for="adr"
-                    ><i class="fa fa-address-card-o"></i> Address</label
-                  >
-                  <input
-                    type="text"
-                    id="adr"
-                    name="address"
-                    placeholder="542 W. 15th Street"
-                  />
-                  <label for="city"
-                    ><i class="fa fa-institution"></i> City</label
-                  >
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="New York"
-                  />
+    <section class="checkout-cover">
+      <div class="checkout-title">
+        <h2>
+          Checkout
+        </h2>
+      </div>
 
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="state">State</label>
-                      <input
-                        type="text"
-                        id="state"
-                        name="state"
-                        placeholder="NY"
-                      />
-                    </div>
-                    <div class="col-50">
-                      <label for="zip">Zip</label>
-                      <input
-                        type="text"
-                        id="zip"
-                        name="zip"
-                        placeholder="10001"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-50">
-                  <h3>Payment</h3>
-                  <label for="fname">Accepted Cards</label>
-                  <div class="icon-container">
-                    <i class="fa fa-cc-visa" style="color:navy;"></i>
-                    <i class="fa fa-cc-amex" style="color:blue;"></i>
-                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                    <i class="fa fa-cc-discover" style="color:orange;"></i>
-                  </div>
-                  <label for="cname">Name on Card</label>
-                  <input
-                    type="text"
-                    id="cname"
-                    name="cardname"
-                    placeholder="John More Doe"
-                  />
-                  <label for="ccnum">Credit card number</label>
-                  <input
-                    type="text"
-                    id="ccnum"
-                    name="cardnumber"
-                    placeholder="1111-2222-3333-4444"
-                  />
-                  <label for="expmonth">Exp Month</label>
-                  <input
-                    type="text"
-                    id="expmonth"
-                    name="expmonth"
-                    placeholder="September"
-                  />
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="expyear">Exp Year</label>
-                      <input
-                        type="text"
-                        id="expyear"
-                        name="expyear"
-                        placeholder="2018"
-                      />
-                    </div>
-                    <div class="col-50">
-                      <label for="cvv">CVV</label>
-                      <input
-                        type="text"
-                        id="cvv"
-                        name="cvv"
-                        placeholder="352"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <label>
-                <input type="checkbox" checked="checked" name="sameadr" />
-                Shipping address same as billing
-              </label>
-              <input type="submit" value="Continue to checkout" class="btn" />
-            </form>
-          </div>
+      <div class="checkout-delivery-info">
+        <div class="checkout container">
+          <h4>
+            Delivery Info
+          </h4>
+          <p><b>Name:</b> Chidiebere Onyegbuchulem</p>
+          <p>
+            <b>Address:</b> Andela Epic Tower, 235 Ikorodu Rd, Ilupeju, Lagos
+          </p>
+          <p><b>Phone:</b> 23411183789</p>
         </div>
-        <div class="col-25">
-          <div class="container">
-            <h4>
-              Cart
-              <span class="price" style="color:black"
-                ><i class="fa fa-shopping-cart"></i> <b>4</b></span
-              >
-            </h4>
-            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-            <hr />
-            <p>
-              Total <span class="price" style="color:black"><b>$30</b></span>
-            </p>
-          </div>
+      </div>
+
+      <div class="checkout food image">
+        <div class="checkout container">
+          <div class="checkout food img"></div>
+        </div>
+      </div>
+
+      <div class="checkout-amount-summary">
+        <div class="checkout container">
+          <h4>
+            Cart
+            <span class="price"
+              ><i class="fa fa-shopping-cart"></i> <b>4</b></span
+            >
+          </h4>
+          <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+          <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+          <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+          <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+          <hr />
+          <p>
+            Total <span class="price"><b>$30</b></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="checkout-payment-info">
+        <div class="checkout container">
+          <form class="checkout form">
+            <div class="checkout wrap">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa"></i>
+                <i class="fa fa-cc-amex"></i>
+                <i class="fa fa-cc-mastercard"></i>
+                <i class="fa fa-cc-discover"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input
+                type="text"
+                id="cname"
+                name="cardname"
+                placeholder="John More Doe"
+              />
+              <label for="ccnum">Credit card number</label>
+              <input
+                type="text"
+                id="ccnum"
+                name="cardnumber"
+                placeholder="1111-2222-3333-4444"
+              />
+              <label for="expmonth">Exp Month</label>
+              <input
+                type="text"
+                id="expmonth"
+                name="expmonth"
+                placeholder="September"
+              />
+
+              <label for="expyear">Exp Year</label>
+              <input
+                type="text"
+                id="expyear"
+                name="expyear"
+                placeholder="2018"
+              />
+
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="352" />
+
+              <button class="checkout-form btn" type="submit">
+                Continue to checkout
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
