@@ -455,7 +455,7 @@ body .hero .wrapper .order-btn {
     -ms-grid-columns: 50% auto;
         grid-template-columns: 50% auto;
     -ms-grid-rows: (5)[auto];
-        grid-template-rows: repeat(auto 5);
+        grid-template-rows: repeat(auto, 5);
         grid-template-areas: "title title" "delivery_info delivery_info" "food_img amount_summary" "payment_info payment_info";
   }
 }
@@ -467,7 +467,7 @@ body .hero .wrapper .order-btn {
     -ms-grid-columns: 30% 20% 30%;
         grid-template-columns: 30% 20% 30%;
     -ms-grid-rows: (5)[auto];
-        grid-template-rows: repeat(auto 5);
+        grid-template-rows: repeat(auto, 5);
         grid-template-areas: "title title title" "delivery_info delivery_info payment_info" "food_img amount_summary payment_info" "food_img amount_summary payment_info";
   }
 }

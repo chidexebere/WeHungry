@@ -400,7 +400,7 @@ body {
   @include tablet {
     display: grid;
     grid-template-columns: 50% auto;
-    grid-template-rows: repeat(auto 5);
+    grid-template-rows: repeat(auto, 5);
     grid-template-areas:
       "title title"
       "delivery_info delivery_info"
@@ -411,7 +411,7 @@ body {
   @include desktop() {
     display: grid;
     grid-template-columns: 30% 20% 30%;
-    grid-template-rows: repeat(auto 5);
+    grid-template-rows: repeat(auto, 5);
     grid-template-areas:
       "title title title"
       "delivery_info delivery_info payment_info"
