@@ -23,14 +23,47 @@ p {
   font-family: "Lato", sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+a {
+  color: #2196f3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
 input {
   outline: none;
   border: none;
+  width: 100%;
 }
 
 body,
 html {
-  height: 100%;
+  height: 100vh;
+}
+
+.footer {
+  background: brown;
+  padding: 2rem;
+  text-align: center;
 }
 
 body {
@@ -400,79 +433,125 @@ body .hero .wrapper .order-btn {
   background-image: url("../../UI/images/food_6.jpg");
 }
 
-.footer {
-  background: brown;
-  padding: 2rem;
-  text-align: center;
+.checkout-cover {
+  color: #000;
+  margin-top: 8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (5)[auto];
+      grid-template-rows: repeat(auto 5);
+      grid-template-areas: "title" "delivery_info" "food_img" "amount_summary" "payment_info";
 }
 
-.row {
-  display: -ms-flexbox;
-  /* IE10 */
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
+@media (min-width: 700px) {
+  .checkout-cover {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+    -ms-grid-rows: (5)[auto];
+        grid-template-rows: repeat(auto 5);
+        grid-template-areas: "title title" "delivery_info delivery_info" "food_img amount_summary" "payment_info payment_info";
+  }
 }
 
-.col-25 {
-  -ms-flex: 25%;
-  /* IE10 */
-  -webkit-box-flex: 25%;
-          flex: 25%;
+@media (min-width: 1024px) {
+  .checkout-cover {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 20% 30%;
+        grid-template-columns: 30% 20% 30%;
+    -ms-grid-rows: (5)[auto];
+        grid-template-rows: repeat(auto 5);
+        grid-template-areas: "title title title" "delivery_info delivery_info payment_info" "food_img amount_summary payment_info" "food_img amount_summary payment_info";
+  }
 }
 
-.col-50 {
-  -ms-flex: 50%;
-  /* IE10 */
-  -webkit-box-flex: 50%;
-          flex: 50%;
+.checkout-cover .checkout-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
 }
 
-.col-75 {
-  -ms-flex: 75%;
-  /* IE10 */
-  -webkit-box-flex: 75%;
-          flex: 75%;
+.checkout-cover .checkout-delivery-info {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: delivery_info;
 }
 
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
+.checkout-cover .checkout.food.image {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: food_img;
+}
+
+.checkout-cover .checkout.food.image .checkout.food.img {
+  background-image: url("../../UI/images/food_1.jpg");
+  height: 20rem;
+}
+
+.checkout-cover .checkout-amount-summary {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: amount_summary;
+}
+
+.checkout-cover .checkout-amount-summary span.price {
+  float: right;
+}
+
+.checkout-cover .checkout-payment-info {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: payment_info;
+}
+
+.checkout-cover .checkout-title,
+.checkout-cover .checkout-delivery-info,
+.checkout-cover .checkout.food.image,
+.checkout-cover .checkout-amount-summary,
+.checkout-cover .checkout-payment-info {
+  padding: 0 1.6rem;
+  margin: 1.6rem 0;
 }
 
 .container {
   background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
+  padding: 1rem;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
 
-input[type=text] {
-  width: 100%;
+.container .form .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .form .wrap label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container .form .wrap input[type="text"] {
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
-
-.btn {
-  background-color: #4CAF50;
-  color: white;
+.container .form .wrap .btn {
+  background-color: #4caf50;
+  color: #fff;
   padding: 12px;
   margin: 10px 0;
   border: none;
@@ -482,33 +561,33 @@ label {
   font-size: 17px;
 }
 
-.btn:hover {
-  background-color: #45a049;
+.container .form .wrap .btn:hover {
+  background-color: #fac564;
 }
 
-a {
-  color: #2196F3;
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
 }
 
-hr {
-  border: 1px solid lightgrey;
+.icon-container .fa.fa-cc-visa {
+  color: navy;
 }
 
-span.price {
-  float: right;
-  color: grey;
+.icon-container .fa.fa-cc-amex {
+  color: blue;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-  .row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .col-25 {
-    margin-bottom: 20px;
-  }
+.icon-container .fa.fa-cc-mastercard {
+  color: red;
+}
+
+.icon-container .fa.fa-cc-discover {
+  color: orange;
+}
+
+.img {
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=main.css.map */

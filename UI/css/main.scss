@@ -16,6 +16,7 @@ $colors: (
   primary: #fff,
   secondary: #000,
   button1: #fac564,
+  button2: #4caf50,
   link: brown,
   link-light: lighten(brown, 40%)
 );
@@ -49,14 +50,49 @@ p {
   font-family: "Lato", sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+a {
+  color: #2196f3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
 input {
   outline: none;
   border: none;
+  width: 100%;
 }
 
 body,
 html {
-  height: 100%;
+  height: 100vh;
+}
+
+//footer
+
+.footer {
+  background: color(link);
+  padding: 2rem;
+  text-align: center;
 }
 
 body {
@@ -345,104 +381,152 @@ body {
   background-image: url("../../UI/images/food_6.jpg");
 }
 
-.footer {
-  background: color(link);
-  padding: 2rem;
-  text-align: center;
+//checkout page
+
+.checkout-cover {
+  color: color(secondary);
+  margin-top: 8rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(auto 5);
+  grid-template-areas:
+    "title"
+    "delivery_info"
+    "food_img"
+    "amount_summary"
+    "payment_info";
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: repeat(auto 5);
+    grid-template-areas:
+      "title title"
+      "delivery_info delivery_info"
+      "food_img amount_summary"
+      "payment_info payment_info";
+  }
+
+  @include desktop() {
+    display: grid;
+    grid-template-columns: 30% 20% 30%;
+    grid-template-rows: repeat(auto 5);
+    grid-template-areas:
+      "title title title"
+      "delivery_info delivery_info payment_info"
+      "food_img amount_summary payment_info"
+      "food_img amount_summary payment_info";
+  }
+
+  .checkout-title {
+    grid-area: title;
+  }
+
+  .checkout-delivery-info {
+    grid-area: delivery_info;
+  }
+
+  .checkout.food.image {
+    grid-area: food_img;
+
+    .checkout.food.img {
+      background-image: url("../../UI/images/food_1.jpg");
+      height: 20rem;
+    }
+  }
+
+  .checkout-amount-summary {
+    grid-area: amount_summary;
+
+    span.price {
+      float: right;
+    }
+  }
+
+  .checkout-payment-info {
+    grid-area: payment_info;
+  }
+
+  .checkout-title,
+  .checkout-delivery-info,
+  .checkout.food.image,
+  .checkout-amount-summary,
+  .checkout-payment-info {
+    padding: 0 1.6rem;
+    margin: 1.6rem 0;
+  }
 }
 
-
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
-
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
-
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
+// Forms
 
 .container {
   background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
+  padding: 1rem;
   border: 1px solid lightgrey;
   border-radius: 3px;
+
+  .form {
+    .wrap {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      input[type="text"] {
+        //   width: 100%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .btn {
+        background-color: color(button2);
+        color: color(primary);
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+      }
+
+      .btn:hover {
+        background-color: color(button1);
+      }
+    }
+  }
 }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
+//credit card icons
 
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
-}
 
-.btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
-
-a {
-  color: #2196F3;
-}
-
-hr {
-  border: 1px solid lightgrey;
-}
-
-span.price {
-  float: right;
-  color: grey;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column-reverse;
+  .fa.fa-cc-visa {
+    color: navy;
   }
-  .col-25 {
-    margin-bottom: 20px;
+
+  .fa.fa-cc-amex {
+    color: blue;
   }
+
+  .fa.fa-cc-mastercard {
+    color: red;
+  }
+
+  .fa.fa-cc-discover {
+    color: orange;
+  }
+}
+
+.img {
+  background-repeat: no-repeat;
 }
