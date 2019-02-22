@@ -3,7 +3,6 @@ class Order {
     this.id = null;
     this.mealId = null;
     this.userId = null;
-    this.catererId = null;
     this.quantity = null;
     this.deliveryCost = null;
     this.totalCost = null;
