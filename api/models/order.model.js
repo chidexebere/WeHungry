@@ -6,8 +6,8 @@ class Order {
     this.quantity = null;
     this.deliveryCost = null;
     this.totalCost = null;
-    this.dateOrdered = null;
-    this.timeOrdered = null;
+    this.createdAt = null;
+    this.updatedAt = null;
     this.status = null;
   }
 }
