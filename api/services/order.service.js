@@ -1,13 +1,12 @@
 import orderData from "../utils/orderData";
 import Order from "../models/order.model";
 
-const orderService = {
+const OrderService = {
   createAnOrder(order) {
     const newId = orderData.orders.length + 1;
     const newOrder = order;
     newOrder.id = newId;
     newOrder.createdAt = new Date();
-    newOrder.updatedAt = new Date();
     orderData.orders.push(newOrder);
     return newOrder;
   },
@@ -17,6 +16,8 @@ const orderService = {
     modiifiedOrder.mealId = orderUpdate.mealId;
     modiifiedOrder.quantity = orderUpdate.quantity;
     modiifiedOrder.status = orderUpdate.status;
+    modiifiedOrder.updatedAt = new Date();
+
     return modiifiedOrder;
   },
   fetchAllOrders() {
@@ -27,7 +28,8 @@ const orderService = {
       newOrder.userId = order.userId;
       newOrder.quantity = order.quantity;
       newOrder.deliveryCost = order.deliveryCost;
-      newOrder.totalCost = order.totalCost;
+      newOrder.createdAt = order.createdAt;
+      newOrder.updatedAt = order.updatedAt;
       newOrder.status = order.status;
       return newOrder;
     });
@@ -35,4 +37,4 @@ const orderService = {
   }
 };
 
-export default orderService;
+export default OrderService;

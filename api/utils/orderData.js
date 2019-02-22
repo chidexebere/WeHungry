@@ -7,8 +7,8 @@ export default {
       quantity: "3",
       deliveryCost: "100",
       totalCost: "750",
-      dateOrdered: "10-02-2018",
-      timeOrdered: "1:10pm",
+      createdAt: "2017-07-25T02:26:54.985Z",
+      updatedAt: "2017-07-25T02:26:54.985Z",
       status: "delivered"
     },
     {
@@ -18,8 +18,8 @@ export default {
       quantity: "1",
       deliveryCost: "100",
       totalCost: "850",
-      dateOrdered: "20-02-2018",
-      timeOrdered: "3:00pm",
+      createdAt: "2017-07-25T02:26:54.985Z",
+      updatedAt: "2017-07-25T02:26:54.985Z",
       status: "pending"
     },
     {
@@ -29,8 +29,8 @@ export default {
       quantity: "2",
       deliveryCost: "100",
       totalCost: "1000",
-      dateOrdered: "06-02-2018",
-      timeOrdered: "4:15pm",
+      createdAt: "2017-07-25T02:26:54.985Z",
+      updatedAt: "2017-07-25T02:26:54.985Z",
       status: "fail"
     }
   ]
