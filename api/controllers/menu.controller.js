@@ -37,6 +37,16 @@ const MenuController = {
         data: todaysMenu
       })
       .status(200);
+  },
+  deleteAMenu(req, res) {
+    const id = req.params.id;
+    const filteredmenus = MenuService.deleteAMenu(id);
+    return res
+      .json({
+        status: "success",
+        data: filteredmenus
+      })
+      .status(204);
   }
 };
 

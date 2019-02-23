@@ -28,6 +28,7 @@ const OrderService = {
       newOrder.userId = order.userId;
       newOrder.quantity = order.quantity;
       newOrder.deliveryCost = order.deliveryCost;
+      newOrder.totalCost = order.totalCost;
       newOrder.createdAt = order.createdAt;
       newOrder.updatedAt = order.updatedAt;
       newOrder.status = order.status;

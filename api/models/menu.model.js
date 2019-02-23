@@ -1,8 +1,8 @@
 class Menu {
   constructor() {
     this.id = null;
-    this.type = null;
-    this.meals = null;
+    this.cusine = null;
+    this.meals = [];
   }
 }
 

@@ -7,8 +7,10 @@ const MealService = {
       const newMeal = new Meal();
       newMeal.id = meal.id;
       newMeal.name = meal.name;
-      newMeal.size = meal.size;
+      newMeal.image = meal.image;
       newMeal.price = meal.price;
+      newMeal.catererId = meal.catererId;
+
       return newMeal;
     });
     return validMeals;
@@ -29,8 +31,8 @@ const MealService = {
   updateAMeal(id, mealUpdate) {
     const updatedMeal = mealData.meals.find(meal => meal.id == id);
     updatedMeal.name = mealUpdate.name;
+    updatedMeal.image = mealUpdate.image;
     updatedMeal.price = mealUpdate.price;
-    updatedMeal.size = mealUpdate.size;
     return updatedMeal;
   },
   deleteAMeal(id) {
@@ -38,7 +40,8 @@ const MealService = {
     const filteredmeals = mealData.meals
       .slice(0, i)
       .concat(mealData.meals.slice(i + 1, mealData.meals.length));
-    return filteredmeals;
+    mealData.meals = filteredmeals;
+    return mealData.meals;
   }
 };
 
