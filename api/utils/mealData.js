@@ -3,26 +3,30 @@ export default {
     {
       id: 1,
       name: "Fried Rice",
-      size: "Medium",
-      price: "450"
+      image: "1",
+      price: "450",
+      catererId: 2
     },
     {
       id: 2,
       name: "Jollof Rice",
-      size: "Large",
-      price: "550"
+      image: "2",
+      price: "550",
+      catererId: 1
     },
     {
       id: 3,
       name: "Eba & Egusi soup",
-      size: "Small",
-      price: "650"
+      image: "3",
+      price: "650",
+      catererId: 2
     },
     {
       id: 4,
       name: "Beans & Dodo",
-      size: "Medium",
-      price: "400"
+      image: "4",
+      price: "400",
+      catererId: 1
     }
   ]
 };
