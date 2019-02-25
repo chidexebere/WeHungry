@@ -581,3 +581,60 @@ body {
     margin: 1.6rem 0;
   }
 }
+
+//confirmation page
+
+.confirmation-cover {
+  color: color(secondary);
+  margin-top: 8rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(auto 5);
+  grid-template-areas:
+    "title"
+    "food_img"
+    "amount_summary"
+    "delivery_info";
+
+  @include tablet {
+    width: 70%;
+  }
+
+  @include desktop() {
+    width: 50%;
+  }
+
+  .confirmation-title {
+    grid-area: title;
+  }
+
+  .confirmation.food.image {
+    grid-area: food_img;
+
+    .confirmation.food.img {
+      background-image: url("../../UI/images/food_1.jpg");
+      height: 20rem;
+    }
+  }
+
+  .confirmation-amount-summary {
+    grid-area: amount_summary;
+
+    span.price {
+      float: right;
+    }
+  }
+
+  .confirmation-delivery-info {
+    grid-area: delivery_info;
+  }
+
+  .confirmation-title,
+  .confirmation.food.image,
+  .confirmation-amount-summary,
+  .confirmation-delivery-info {
+    padding: 0 1.6rem;
+    margin: 1.6rem 0;
+  }
+}
