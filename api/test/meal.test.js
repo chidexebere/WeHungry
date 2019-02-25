@@ -1,7 +1,7 @@
 import chai from "chai";
 import chaiHTTP from "chai-http";
 import app from "../index";
-import Meals from "../models/meal.model";
+import meals from "../utils/mealData";
 
 const { assert, expect, use } = chai;
 
@@ -22,7 +22,7 @@ describe("Meals Endpoint Tests", () => {
     done();
   });
 
-  it(`GET ${API_PREFIX}/meals/:mealId - Fetch a Meal `, done => {
+  it(`GET ${API_PREFIX}/meals/:id - Fetch a Meal `, done => {
     let meal = {
       name: "Jollof Rice",
       image: "2",
@@ -36,7 +36,7 @@ describe("Meals Endpoint Tests", () => {
         expect(res).to.have.status(200);
         assert.equal(res.body.status, "success");
       })
-      .catch(err => console.log("GET /meals/:mealId", err.message));
+      .catch(err => console.log("GET /meals/:id", err.message));
     done();
   });
 
@@ -51,7 +51,7 @@ describe("Meals Endpoint Tests", () => {
     chai
       .request(app)
       .post(`${API_PREFIX}/meals/`)
-      .set(meal)
+      .send(meal)
       .then(res => {
         expect(res).to.have.status(201);
         assert.equal(res.body.status, "success");
@@ -60,15 +60,16 @@ describe("Meals Endpoint Tests", () => {
     done();
   });
 
-  it(`PUT ${API_PREFIX}/meals/:mealId - Update a Meal Option `, done => {
-    let oldMeal = {
+  it(`PUT ${API_PREFIX}/meals/:id - Update a Meal Option `, done => {
+    let meal = {
+      id: 1,
       name: "Eba & Egusi soup",
       image: "3",
       price: "650",
       catererId: 2
     };
 
-    let newMeal = {
+    let mealUpdate = {
       name: "Amala",
       image: "3",
       price: "700",
@@ -76,8 +77,8 @@ describe("Meals Endpoint Tests", () => {
     };
     chai
       .request(app)
-      .put(`${API_PREFIX}/meals/${oldMeal.id}`)
-      .set(newMeal)
+      .put(`${API_PREFIX}/meals/${meal.id}`)
+      .send(mealUpdate)
       .then(res => {
         expect(res).to.have.status(200);
         assert.equal(res.body.status, "success");
@@ -86,8 +87,9 @@ describe("Meals Endpoint Tests", () => {
     done();
   });
 
-  it(`DELETE ${API_PREFIX}/meals/:mealId - Delete Meal `, done => {
+  it(`DELETE ${API_PREFIX}/meals/:id - Delete Meal `, done => {
     let meal = {
+      id: 2,
       name: "Jollof Rice",
       image: "2",
       price: "550",
@@ -100,7 +102,7 @@ describe("Meals Endpoint Tests", () => {
         expect(res).to.have.status(200);
         assert.equal(res.body.status, "success");
       })
-      .catch(err => console.log("DELETE /meals/:mealId", err.message));
+      .catch(err => console.log("DELETE /meals/:id", err.message));
     done();
   });
 });
