@@ -530,3 +530,54 @@ body {
 .img {
   background-repeat: no-repeat;
 }
+
+//order page
+
+.order-cover {
+  color: color(secondary);
+  margin-top: 8rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(auto 5);
+  grid-template-areas:
+    "food_img"
+    "amount_summary"
+    "payment_info";
+
+  @include tablet {
+    width: 70%;
+  }
+
+  @include desktop() {
+    width: 50%;
+  }
+
+  .order.food.image {
+    grid-area: food_img;
+
+    .order.food.img {
+      background-image: url("../../UI/images/food_1.jpg");
+      height: 20rem;
+    }
+  }
+
+  .order-amount-summary {
+    grid-area: amount_summary;
+
+    span.price {
+      float: right;
+    }
+  }
+
+  .order-payment-info {
+    grid-area: payment_info;
+  }
+
+  .order.food.image,
+  .order-amount-summary,
+  .order-payment-info {
+    padding: 0 1.6rem;
+    margin: 1.6rem 0;
+  }
+}

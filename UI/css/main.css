@@ -485,7 +485,7 @@ body .hero .wrapper .order-btn {
 }
 
 .checkout-cover .checkout.food.image {
-  -ms-grid-row: 3;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: food_img;
 }
@@ -496,7 +496,7 @@ body .hero .wrapper .order-btn {
 }
 
 .checkout-cover .checkout-amount-summary {
-  -ms-grid-row: 4;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: amount_summary;
 }
@@ -506,7 +506,7 @@ body .hero .wrapper .order-btn {
 }
 
 .checkout-cover .checkout-payment-info {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: payment_info;
 }
@@ -589,5 +589,66 @@ body .hero .wrapper .order-btn {
 
 .img {
   background-repeat: no-repeat;
+}
+
+.order-cover {
+  color: #000;
+  margin-top: 8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (5)[auto];
+      grid-template-rows: repeat(auto 5);
+      grid-template-areas: "food_img" "amount_summary" "payment_info";
+}
+
+@media (min-width: 700px) {
+  .order-cover {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .order-cover {
+    width: 50%;
+  }
+}
+
+.order-cover .order.food.image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: food_img;
+}
+
+.order-cover .order.food.image .order.food.img {
+  background-image: url("../../UI/images/food_1.jpg");
+  height: 20rem;
+}
+
+.order-cover .order-amount-summary {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: amount_summary;
+}
+
+.order-cover .order-amount-summary span.price {
+  float: right;
+}
+
+.order-cover .order-payment-info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: payment_info;
+}
+
+.order-cover .order.food.image,
+.order-cover .order-amount-summary,
+.order-cover .order-payment-info {
+  padding: 0 1.6rem;
+  margin: 1.6rem 0;
 }
 /*# sourceMappingURL=main.css.map */
