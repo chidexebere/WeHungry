@@ -7,12 +7,16 @@
     <meta
       name="Description"
       content="Author: Chidiebere Onyegbuchulem, 
-    The login page for the food ordering app that allows users locate restaurants, order and make reviews"
+    The order page for the food ordering app that allows users locate restaurants, order and make reviews"
     />
-    <title>WeHungry</title>
+    <title>Order</title>
     <link
       href="https://fonts.googleapis.com/css?family=Lato"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/nav.css" />
@@ -46,57 +50,51 @@
       </div>
     </section>
 
-    <div class="cover-login">
-      <div class="container-login">
-        <div class="wrap-login">
-          <form class="login-form ">
-            <div class="login-form-title">
-              <h2>Welcome</h2>
-            </div>
+    <section class="order-cover">
+      <div class="order food image">
+        <div class="order container">
+          <div class="order food img"></div>
+        </div>
+      </div>
 
-            <label for="email"><b>Email</b></label>
-            <input
-              class="input"
-              type="text"
-              name="email"
-              placeholder="Email"
-              required
-            />
-
-            <label for="psw"><b>Password</b></label>
-            <input
-              class="input"
-              type="password"
-              placeholder="Password"
-              name="psw"
-              required
-            />
-
-            <button
-              class="login-form-btn"
-              href="food-selection.html"
-              type="submit"
+      <div class="order-amount-summary">
+        <div class="order container">
+          <h4>
+            Cart
+            <span class="price"
+              ><i class="fa fa-shopping-cart"></i> <b>4</b></span
             >
-              Login
-            </button>
+          </h4>
+          <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+          <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+          <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+          <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+          <hr />
+          <p>
+            Total <span class="price"><b>$30</b></span>
+          </p>
+        </div>
+      </div>
 
-            <div class="text-signup">
-              <span class="txt1">
-                Don’t have an account?
-              </span>
-
-              <a class="txt2" href="#">
-                Sign Up
-              </a>
+      <div class="order-payment-info">
+        <div class="order container">
+          <form class="order form">
+            <div class="order wrap">
+              <button class="order-form btn" type="submit">
+                <a href="checkout.html"> order now</a>
+              </button>
             </div>
           </form>
         </div>
       </div>
-    </div>
+    </section>
+
     <footer class="footer">
       <p>
         © 2019 Chidiebere Onyegbuchulem
       </p>
     </footer>
+
+    <script src="js/nav.js"></script>
   </body>
 </html>
