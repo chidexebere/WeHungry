@@ -479,13 +479,13 @@ body .hero .wrapper .order-btn {
 }
 
 .checkout-cover .checkout-delivery-info {
-  -ms-grid-row: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: delivery_info;
 }
 
 .checkout-cover .checkout.food.image {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: food_img;
 }
@@ -496,7 +496,7 @@ body .hero .wrapper .order-btn {
 }
 
 .checkout-cover .checkout-amount-summary {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: amount_summary;
 }
@@ -619,7 +619,7 @@ body .hero .wrapper .order-btn {
 }
 
 .order-cover .order.food.image {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: food_img;
 }
@@ -630,7 +630,7 @@ body .hero .wrapper .order-btn {
 }
 
 .order-cover .order-amount-summary {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: amount_summary;
 }
@@ -648,6 +648,74 @@ body .hero .wrapper .order-btn {
 .order-cover .order.food.image,
 .order-cover .order-amount-summary,
 .order-cover .order-payment-info {
+  padding: 0 1.6rem;
+  margin: 1.6rem 0;
+}
+
+.confirmation-cover {
+  color: #000;
+  margin-top: 8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (5)[auto];
+      grid-template-rows: repeat(auto 5);
+      grid-template-areas: "title" "food_img" "amount_summary" "delivery_info";
+}
+
+@media (min-width: 700px) {
+  .confirmation-cover {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .confirmation-cover {
+    width: 50%;
+  }
+}
+
+.confirmation-cover .confirmation-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.confirmation-cover .confirmation.food.image {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: food_img;
+}
+
+.confirmation-cover .confirmation.food.image .confirmation.food.img {
+  background-image: url("../../UI/images/food_1.jpg");
+  height: 20rem;
+}
+
+.confirmation-cover .confirmation-amount-summary {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: amount_summary;
+}
+
+.confirmation-cover .confirmation-amount-summary span.price {
+  float: right;
+}
+
+.confirmation-cover .confirmation-delivery-info {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: delivery_info;
+}
+
+.confirmation-cover .confirmation-title,
+.confirmation-cover .confirmation.food.image,
+.confirmation-cover .confirmation-amount-summary,
+.confirmation-cover .confirmation-delivery-info {
   padding: 0 1.6rem;
   margin: 1.6rem 0;
 }
