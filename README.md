@@ -1,8 +1,6 @@
 # WeHungry
 
-[![Build Status](https://travis-ci.org/chidexebere/WeHungry.svg?branch=develop)](https://travis-ci.org/chidexebere/WeHungry)
-
-[![Coverage Status](https://coveralls.io/repos/github/chidexebere/WeHungry/badge.svg?branch=master)](https://coveralls.io/github/chidexebere/WeHungry?branch=master)
+[![Build Status](https://travis-ci.org/chidexebere/WeHungry.svg?branch=develop)](https://travis-ci.org/chidexebere/WeHungry) [![Coverage Status](https://coveralls.io/repos/github/chidexebere/WeHungry/badge.svg?branch=master)](https://coveralls.io/github/chidexebere/WeHungry?branch=master)
 
 ## Summary
 
@@ -50,6 +48,6 @@ This will start the app at `http://localhost:7001`.
 
 `https://wehungry-api.herokuapp.com`
 
-## UI
+## UI Template
 
 `https://chidexebere.github.io/WeHungry/UI`

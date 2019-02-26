@@ -4,8 +4,12 @@
   "description": "food app ;api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
+    "dev": "nodemon --exec babel-node index.js",
     "test": "nyc mocha --require @babel/register --exit",
+    "start": "node build/index.js",
+    "build-babel": "babel -d ./build ./api -s",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run build-babel",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
