@@ -1,6 +1,6 @@
 # WeHungry
 
-[![Build Status](https://travis-ci.org/chidexebere/WeHungry.svg?branch=develop)](https://travis-ci.org/chidexebere/WeHungry) [![Coverage Status](https://coveralls.io/repos/github/chidexebere/WeHungry/badge.svg?branch=master)](https://coveralls.io/github/chidexebere/WeHungry?branch=master)
+[![Build Status](https://travis-ci.org/chidexebere/WeHungry.svg?branch=develop)](https://travis-ci.org/chidexebere/WeHungry) [![Coverage Status](https://coveralls.io/repos/github/chidexebere/WeHungry/badge.svg?branch=feature%2Fintegrate-travisCI-and-coveralls)](https://coveralls.io/github/chidexebere/WeHungry?branch=feature%2Fintegrate-travisCI-and-coveralls)
 
 ## Summary
 
