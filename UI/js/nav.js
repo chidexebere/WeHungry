@@ -1,14 +1,19 @@
-//selecting dom elements for manipulation
-const toggleNav = document.querySelector("#nav-toggle");
-const navigation = document.querySelector("nav ul");
+(function() {
+  var hamburger = {
+    navToggle: document.querySelector("#nav-toggle"),
+    nav: document.querySelector(".nav-list"),
 
-//toggle side nav
-toggleNav.addEventListener("click", () => {
-  navigation.slideToggle();
-  this.classList.toggle("active");
-});
+    doToggle: function(e) {
+      e.preventDefault();
+      this.navToggle.classList.toggle("active");
+      this.nav.classList.toggle("expanded");
+    }
+  };
 
-// //Hamburger to X toggle
-// toggleNav.addEventListener("click", () => {
-//   this.classList.toggle("active");
-// });
+  hamburger.navToggle.addEventListener("click", function(e) {
+    hamburger.doToggle(e);
+  });
+  hamburger.navToggle.addEventListener("click", function(e) {
+    hamburger.nav.doToggle(e);
+  });
+})();
