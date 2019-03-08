@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaiHTTP from "chai-http";
-import app from "../index";
+import app from "../server";
 
 const { assert, expect, use } = chai;
 
