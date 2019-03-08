@@ -15,7 +15,16 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Caterer.associate = function(models) {
-    // associations can be defined here
+    Caterer.belongsToMany(models.Customer, {
+      through: "Order",
+      as: "customers",
+      foreignKey: "caterer_id"
+    });
+    Caterer.belongsToMany(models.Cuisine, {
+      through: "Meal",
+      as: "cuisines",
+      foreignKey: "caterer_id"
+    });
   };
   return Caterer;
 };
