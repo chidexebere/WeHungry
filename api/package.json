@@ -12,10 +12,22 @@
     "build": "npm run clean && npm run build-babel",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chidexebere/WeHungry.git"
+  },
+  "keywords": [
+    "food",
+    "meal booking app",
+    "weHungry"
+  ],
+  "author": "Chidiebere Onyegbuchulem",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.4",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
     "pg": "^7.8.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.43.0"

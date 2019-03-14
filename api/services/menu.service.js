@@ -1,33 +1,59 @@
-import menuData from "../utils/menuData";
-import Menu from "../models/menu.model";
+import database from "../database/models";
 
-const MenuService = {
-  createMenu(menu) {
-    const newId = menuData.menus.length + 1;
-    const newMenu = menu;
-    newMenu.id = newId;
-    menuData.menus.push(newMenu);
-    return menu;
-  },
+/**
+ * menu services performs all actions
+ * setup menu for the day and
+ * fetch menu for the day
+ */
 
-  fetchTodaysMenu() {
-    const todaysMenu = menuData.menus.map(menu => {
-      const newMenu = new Menu();
-      newMenu.id = menu.id;
-      newMenu.cusine = menu.cusine;
-      newMenu.meals = menu.meals;
-      return newMenu;
-    });
-    return todaysMenu;
-  },
-  deleteAMenu(id) {
-    const i = menuData.menus.findIndex(menu => menu.id == id);
-    const filteredmenus = menuData.menus
-      .slice(0, i)
-      .concat(menuData.menus.slice(i + 1, menuData.menus.length));
-    menuData.menus = filteredmenus;
-    return menuData.menus;
+class MenuService {
+  /**
+   * @description Updates the availability of a meal for today for logged in caterer
+   * @returns {Array} menu object array
+   */
+  static async setUpMenu(id, caterer_id) {
+    try {
+      const foundMeal = await database.Meal.findOne({
+        where: { id, caterer_id }
+      });
+
+      if (foundMeal && foundMeal.available) {
+        throw new Error("Meal has already been added to menu list");
+      }
+
+      if (foundMeal) {
+        return await database.Meal.update(
+          { available: true },
+          {
+            returning: true,
+            where: { id: Number(id), caterer_ids }
+          }
+        );
+      }
+      throw new Error(`Meal with id ${id} cannot be found`);
+    } catch (error) {
+      throw error;
+    }
   }
-};
+
+  /**
+   * @description Retrieve and return all menu from all caterers
+   * @returns {Array} menu object array
+   */
+  static async fetchMenu() {
+    try {
+      return await database.Meal.findAll({
+        where: { available: true },
+        include: [
+          {
+            model: database.Customer
+          }
+        ]
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+}
 
 export default MenuService;

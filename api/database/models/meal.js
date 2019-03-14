@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
       imageUrl: DataTypes.STRING,
       price: DataTypes.STRING,
       cuisine_id: DataTypes.INTEGER,
-      caterer_id: DataTypes.INTEGER
+      caterer_id: DataTypes.INTEGER,
+      available: DataTypes.BOOLEAN
     },
     {}
   );
@@ -15,10 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     Meal.belongsToMany(models.Customer, {
       through: "Order",
       as: "customers",
-      foreignKey: "meal_id"
-    });
-
-    Meal.belongsTo(models.Menu, {
       foreignKey: "meal_id"
     });
   };
