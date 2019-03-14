@@ -23,6 +23,9 @@ module.exports = {
       caterer_id: {
         type: Sequelize.INTEGER
       },
+      available: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

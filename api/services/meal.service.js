@@ -1,48 +1,100 @@
-import mealData from "../utils/mealData";
-import Meal from "../models/meal.model";
+import database from "../database/models";
 
-const MealService = {
-  fetchAllMeals() {
-    const validMeals = mealData.meals.map(meal => {
-      const newMeal = new Meal();
-      newMeal.id = meal.id;
-      newMeal.name = meal.name;
-      newMeal.image = meal.image;
-      newMeal.price = meal.price;
-      newMeal.catererId = meal.catererId;
+/**
+ * meal services performs all action related to meal
+ * fetching all meal
+ * adding a new meal
+ * getting a particular meal
+ * updating an existing meal and
+ * deleting a meal
+ */
 
-      return newMeal;
-    });
-    return validMeals;
-  },
-  addAMeal(meal) {
-    const mealLength = mealData.meals.length;
-    const lastId = mealData.meals[mealLength - 1].id;
-    const newId = lastId + 1;
-    meal.id = newId;
-    mealData.meals.push(meal);
-    return meal;
-  },
-  getAMeal(id) {
-    const meal = mealData.meals.find(meal => meal.id == id);
-    return meal || {};
-  },
-
-  updateAMeal(id, mealUpdate) {
-    const updatedMeal = mealData.meals.find(meal => meal.id == id);
-    updatedMeal.name = mealUpdate.name;
-    updatedMeal.image = mealUpdate.image;
-    updatedMeal.price = mealUpdate.price;
-    return updatedMeal;
-  },
-  deleteAMeal(id) {
-    const i = mealData.meals.findIndex(meal => meal.id == id);
-    const filteredmeals = mealData.meals
-      .slice(0, i)
-      .concat(mealData.meals.slice(i + 1, mealData.meals.length));
-    mealData.meals = filteredmeals;
-    return mealData.meals;
+class MealService {
+  /**
+   * @description Retrieve and return all meals belong to the authenticated caterer
+   * @returns {Array} of meal or throw error
+   */
+  static async fetchAllMeals(caterer_id) {
+    try {
+      return await database.Meal.findAll({ where: { caterer_id } });
+    } catch (error) {
+      throw error;
+    }
   }
-};
+
+  /**
+   * @description Takes a new meal object
+   * @param {object} meal
+   * @returns {object} created meal
+   */
+  static async addAMeal(newMeal) {
+    try {
+      // meal.setDataValue('caterer', await meal.getCaterer());
+      return await database.Meal.create(newMeal);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description Finds a meal record belonging to the currently logged in caterer
+   * @param { int } id
+   * @returns {object} foundMeal
+   */
+  static async getAMeal(id, caterer_id) {
+    try {
+      const foundMeal = await database.Meal.findOne({
+        where: { id: Number(id), caterer_id }
+      });
+      return foundMeal;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description Updates a meal belonging to the currently logged in caterer
+   * @param { int } id
+   * @param {object} updatedMeal
+   * @returns {object} foundMeal
+   */
+  static async updateAMeal(id, updatedMeal, caterer_id) {
+    try {
+      const foundMeal = await database.Meal.findOne({
+        where: { id: Number(id), caterer_id }
+      });
+
+      if (foundMeal) {
+        await database.Meal.update(updatedMeal, { where: { id: Number(id) } });
+        return updatedMeal;
+      }
+      return null;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description Delete a meal record belonging to the currently logged in caterer
+   * @param { int } id
+   * @returns {object} meal
+   */
+  static async deleteAMeal(id, caterer_id) {
+    try {
+      const foundMeal = await database.Meal.findOne({
+        where: { id: Number(id), caterer_id }
+      });
+      if (foundMeal) {
+        const deleteRecord = await database.Meal.destroy({
+          where: { id: Number(id), caterer_id }
+        });
+        return deleteRecord;
+      }
+      return 0;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
 
 export default MealService;
