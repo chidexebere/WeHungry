@@ -1,12 +1,16 @@
 import { Router } from "express";
-
-// controller
 import MenuController from "../controllers/menu.controller";
+import AuthMiddleware from "../middlewares/auth.middleware";
+import PermissionMiddleWare from "../middlewares/permission.middleware";
 
 const router = Router();
 
-router.post("/", MenuController.createMenu);
-router.get("/", MenuController.fetchTodaysMenu);
-router.delete("/:id", MenuController.deleteAMenu);
+router.get("/", AuthMiddleware, MenuController.fetchMenu);
+router.post(
+  "/",
+  AuthMiddleware,
+  PermissionMiddleWare,
+  MenuController.setUpMenu
+);
 
 export default router;
